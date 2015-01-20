@@ -56,7 +56,7 @@ class Flibusta
 
           raw_zip = entry.get_input_stream.read
           content, description = process_fb2(raw_zip)
-          human_size = number_to_human_size(content.size)
+          human_size = number_to_human_size(content.to_s.size)
           zip_file_name = File.basename(zip_file)
           bulk_body << {
               index: {
